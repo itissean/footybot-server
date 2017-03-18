@@ -8,7 +8,8 @@ Clone this repo to your computer and run `yarn install` to install dependencies.
 
 You'll need to connect your database to knex by creating a file called `footybot.conf.js` and input the following:
 
-`const config = {};
+```javascript
+const config = {};
 
 config.apiToken = 'ENTER FOOTBALL-DATA API KEY';
 config.dbConfig = {
@@ -19,7 +20,8 @@ config.dbConfig = {
   charset: 'utf8'
 }
 
-module.exports = config;`
+module.exports = config;
+```
 
 You can also change the database used in knexfile.js. TODO: Breakout that whole configuration.
 
