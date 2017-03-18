@@ -10,10 +10,15 @@ const options = {
   },
 };
 
+/**
+ * Request the resource. Throws an error if the request fails.
+ * @param  {string} path of request
+ * @return {string} body of response
+ */
 function requestResource(path) {
-  const compOptions = Object.assign({}, options);
-  compOptions.url += 'path';
-  request.get(compOptions, (err, res, body) => {
+  const requestOptions = Object.assign({}, options);
+  requestOptions.url += path;
+  request.get(requestOptions, (err, res, body) => {
     if (err) {
       throw err;
     } else {
