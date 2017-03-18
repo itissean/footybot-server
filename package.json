@@ -1,0 +1,25 @@
+{
+  "name": "footybot-server",
+  "version": "0.1.0",
+  "description": "Server and database schema for footybot",
+  "author": "Sean Prasertsit <sean@wulfcode.com>",
+  "scripts": {
+    "knex": "knex",
+    "migrate": "knex migrate:latest",
+    "test": "echo TODO"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itissean/footybot-server"
+  },
+  "bugs": {
+    "url": "https://github.com/itissean/footybot-server/issues"
+  },
+  "dependencies": {
+    "bookshelf": "^0.10.3",
+    "knex": "^0.12.8",
+    "mariasql": "^0.2.6"
+  },
+  "private": true,
+  "license": "MIT"
+}
