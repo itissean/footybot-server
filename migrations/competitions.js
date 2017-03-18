@@ -1,4 +1,4 @@
-exports.up = (knex, Promise) => {
+exports.up = function (knex, Promise) {
   return Promise.all([
     knex.schema.createTable('competitions', (table) => {
       table.increments();
@@ -10,12 +10,12 @@ exports.up = (knex, Promise) => {
       table.integer('numberOfMatchdays');
       table.integer('numberOfTeams');
       table.string('lastUpdated');
-    })
+    }),
   ]);
 };
 
-exports.down = (knex, Promise) => {
+exports.down = function (knex, Promise) {
   return Promise.all([
-    knex.schema.dropTable('competitions')
+    knex.schema.dropTable('competitions'),
   ]);
 };
