@@ -17,7 +17,7 @@ const options = {
 
 /**
  * Utility functions for http request.
- * @type {Object}
+ * @module utils
  */
 const Utils = {
   /**
@@ -26,14 +26,16 @@ const Utils = {
    * @return {string} body of response
    */
   requestResource(path) {
-    const requestOptions = Object.assign({}, options);
-    requestOptions.url += path;
-    request.get(requestOptions, (err, res, body) => {
-      if (err) {
-        throw err;
-      } else {
-        return JSON.parse(body);
-      }
+    return new Promise((resolve, reject) => {
+      const requestOptions = Object.assign({}, options);
+      requestOptions.url += path;
+      request.get(requestOptions, (err, res, body) => {
+        if (err) {
+          reject(new Error(err));
+        } else {
+          resolve(JSON.parse(body));
+        }
+      });
     });
   },
 };
