@@ -6,7 +6,8 @@ const create = require('./create');
  */
 function getFootballData() {
   utils.requestResource('competitions')
-  .then(competition => create.createCompetition(competition));
+  .then(competition => create.createCompetition(competition))
+  .then(process.exitCode = 0);
 }
 
 getFootballData();

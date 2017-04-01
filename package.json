@@ -6,8 +6,10 @@
   "scripts": {
     "knex": "knex",
     "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
     "test": "echo TODO",
-    "start": "node app/app.js"
+    "setup": "node app/setup.js",
+    "start": "node app/updateDb.js"
   },
   "repository": {
     "type": "git",
